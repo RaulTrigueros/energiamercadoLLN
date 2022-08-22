@@ -1,0 +1,2 @@
+El proyecto local se encuentra vinculado por medio del repositorio github, con el proyeto 
+en producción montado en VPS.
