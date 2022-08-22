@@ -1,0 +1,9 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/general.css": "/css/general.css",
+    "/css/portal/portal.css": "/css/portal/portal.css",
+    "/css/dashboard/dashboard.css": "/css/dashboard/dashboard.css",
+    "/js/general.js": "/js/general.js",
+    "/js/portal/portal.js": "/js/portal/portal.js",
+    "/js/dashboard/dashboard.js": "/js/dashboard/dashboard.js"
+}
