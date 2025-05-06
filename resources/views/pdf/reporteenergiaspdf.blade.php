@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <center>
-    <img class="navbar-brand-full" src="img/encabezado.jpg" width="700" height="75px" alt="encabezado" text-align:center>
+    <img class="navbar-brand-full" src="img/encabezado.png" width="700" height="75px" alt="encabezado" text-align:center>
     </center>
     <title>Reporte de Consumo de Energía Eléctrica</title>
     <style>

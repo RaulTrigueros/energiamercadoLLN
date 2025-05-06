@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Portal web alcaldía municipal de san pablo tacachico">
+  <meta name="description" content="Portal web alcaldía del Distrito de San Pablo Tacachico">
   <meta name="author" content="">
 
   <title>Alcaldía SPT</title>
@@ -30,33 +30,10 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top  " id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="/"><img src="img/isotipo_blanco.png" alt="logo" width="80px" height="110px"></a>
+      <a class="navbar-brand js-scroll-trigger" href="/"><img src="img/logonegativo.png" alt="logo" width="95px" height="110px"></a>
       <div class=" stellarnav" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
- <!--
-          <li class=" ml-auto"><a href="#">Servicios</a>
-            <ul>
-              <li><a href="/solicitudinsumo">Solicitud de insumo</a></li>
-              
-              <li><a href="/solicitudPartidaRegistro">Registro Familiar</a></li>
-              <li><a href="#">Programas</a>
-               <ul>
-                  <li><a href="/competencias">Competencias</a></li>
-                  <li><a href="/talleres">Talleres</a></li>
-                </ul> 
-              </li>
-              <li><a href="/servicioportal">Catastro Tributario</a></li>
-              <li><a href="/servicioportal">Mantenimiento Muncipal</a></li>
-              
-            </ul>
-          </li>
-          <li class=" "><a href="#">Noticias</a>
-            <ul>
-              <li><a href="/anuncioportal">Anuncios</a></li>
-              <li><a href="/noticiaportal">Noticias</a></li>
-            </ul>-->
-
-          </li>
+ 
 
           <li class=" "><a href="#">Alcaldía</a>
             <ul>
@@ -85,7 +62,8 @@
         <!-- Footer Location -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Ubicación</h4>
-          <p class="lead mb-0">Av. Vilanova, Barrio El Centro – Alcaldía Municipal de San Pablo Tacachico</p>
+          <p class="lead mb-0">Av. Vilanova, Barrio El Centro – Alcaldía Municipal de La Libertad Norte | Distrito San Pablo Tacachico
+          </p>
         </div>
 
         <!-- Footer Social Icons -->
@@ -108,7 +86,7 @@
         <!-- Footer About Text -->
         <div class="col-lg-4">
           <h4 class="text-uppercase mb-4">Acerca de</h4>
-          <p class="lead mb-0">Alcaldía Municipal de San Pablo Tacachico
+          <p class="lead mb-0">Alcaldía Municipal de La Libertad Norte | Distrito San Pablo Tacachico
 
             <a href="https://www.transparencia.gob.sv/institutions/san-pablo-tacachico-la-libertad" target="_black">Ver</a>.</p>
 

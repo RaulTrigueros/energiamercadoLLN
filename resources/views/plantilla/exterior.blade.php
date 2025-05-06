@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="description" content="Sistema informático para la gestión de procesos municipales">
-  <meta name="author" content="Raúl Trigueros">
+  <meta name="author" content="Ing. Raúl Trigueros">
   <meta name="keyword" content="Alcaldía, Tacachico, Municipio, Servicios generales, combustible, energia electrica">
   
   <title>Alcaldia SPT</title>

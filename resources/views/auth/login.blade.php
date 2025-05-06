@@ -1,8 +1,8 @@
 @extends('auth.contenido')
 
 @section('login')
-<div class="row justify-content-center">
-      <div class="col-md-8">
+<div class="row justify-content-left">
+      <div class="col-md-4"> <!--ancho de formulario de login-->
         <div class="card-group mb-0">
           <div class="card p-4">
           <form class ="form-horizontal was-validated" method="POST" action="{{route('login')}}">
@@ -28,16 +28,16 @@
             </div>
           </form>
           </div>
-          <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+         <!-- <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
             <div class="card-body text-center">
               <div>
-               <img width=100 height=120 src="img/isotipo_blanco.png" alt="logo">
-               <h2>Alcaldía Municipal de San Pablo Tacachico</h2>
-               <p>Sistema Informático para la Gestión de Procesos Internos.</p>
+               <img width=100 height=120 src="img/logo.png" alt="logo">
+               <h5>Alcaldía Municipal de La Libertad Norte | Distrito San Pablo Tacachico</h5>
+               <p>Sistema Informático para la Gestión de Facturas de Energía Eléctrica.</p>
                
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>

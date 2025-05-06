@@ -9,7 +9,7 @@
             <div class="row no-gutters">
               <div class="col-md-4">
 
-               <img class="card-img-top" src="img/isotipo.png" class="card-img"  alt="logo">
+               <img class="card-img-top" src="img/logo.png" class="card-img"  alt="logo">
               </div>
               <div class="col-md-8">
                 <div  class="card-body">

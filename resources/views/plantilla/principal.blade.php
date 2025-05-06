@@ -88,8 +88,8 @@
 
   <footer class="app-footer mt-5">
     <div>
-      <a href="#">AlcaldiaSPT</a>
-      <span>&copy; 2022</span>
+      <a href="#">LaLibertadNorte</a>
+      <span>&copy; 2024</span>
     </div>
     
   </footer>

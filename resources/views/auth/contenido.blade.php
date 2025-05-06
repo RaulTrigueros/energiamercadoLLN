@@ -7,15 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Sistema Informático de Alcaldía Municipal de San Pablo Tacachico">
-  <meta name="author" content="tacachico.gob.sv">
-  <meta name="keyword" content="Alcaldía Tacachico, Municipio">
+  <meta name="author" content="lalibertadnorte.gob.sv">
+  <meta name="keyword" content="Alcaldía Tacachico, Distrito">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
   <title>Alcaldia SPT</title>
 
   <!-- Icons -->
   <link href="css/general.css" rel="stylesheet">
   <link href="css/dashboard/dashboard.css" rel="stylesheet">
-  <link href="css/portal/portal.css" rel="stylesheet">
+  <link href="css/login/login.css" rel="stylesheet">
 
 
 

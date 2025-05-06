@@ -531,7 +531,6 @@
                 
             },
             actualizarEnergia(){
-                
                 if(this.validarEnergia()){
                     return;
                 }

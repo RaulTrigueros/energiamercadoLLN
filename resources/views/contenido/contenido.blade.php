@@ -8,7 +8,7 @@
   <template v-if="menu==0">
 
     <div align="center">
-      <img class="navbar-brand-full" src="img/isotipo_blanco.png" width="50%" height="auto" alt="Logo AMSPT">
+      <img class="navbar-brand-full" src="img/logo-positivo.png" width="70%" height="auto" alt="Logo">
     </div>
 
   </template>

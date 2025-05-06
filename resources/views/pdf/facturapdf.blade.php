@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Factura de Energía Eléctrica</title>
     <center>
-    <img class="navbar-brand-full" src="img/encabezado.jpg" width="600" height="75px" alt="encabezado" text-align:center style="margin-left:3cm;margin-right:3cm">
+    <img class="navbar-brand-full" src="img/encabezado.png" width="600" height="75px" alt="encabezado" text-align:center style="margin-left:3cm;margin-right:3cm">
     </center>
     <style>
         body {
