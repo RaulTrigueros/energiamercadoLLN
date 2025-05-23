@@ -3,25 +3,15 @@
 // use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 //GRUPO DE RUTAS
-/*Route::get('/', function () {
+Route::get('/', function () {
     if (Auth::user()) {
         return view('contenido/index', ['log' => 'si']);
     } else {
         return view('contenido/index', ['log' => 'no']);
     }
-});*/
+});
 
 Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::post('/login1', 'Auth\LoginController@login')->name('login');

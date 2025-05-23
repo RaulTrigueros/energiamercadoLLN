@@ -312,7 +312,7 @@
 </template>
 
 <script>
-//import axios from 'axios'
+import axios from 'axios'
 
     export default{
          data(){
@@ -482,18 +482,7 @@
                 })
             },
 
-           /* selectPersona(){
-                let me = this;
-                var url = '/persona/selectPersona';
-                axios.get(url).then(function (response) {
-                   var respuesta = response.data;
-                   me.arrayPersona = respuesta.personas;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-            },*/
-
+           
             cambiarPagina(page,buscar,criterio){
                 let me = this;
                 me.pagination.current_page = page;
@@ -562,7 +551,7 @@
 
             },
             desactivarEnergia(id){
-                Swal.fire({
+                swal.fire({
                 title: 'Marcar factura como pagada?',
                 type: 'warning',
                 showCancelButton: true,
@@ -581,7 +570,7 @@
                         'id': id
                     }).then(function(response){
                         me.listarEnergia(1,'','nombre_persona');
-                         Swal.fire(
+                         swal.fire(
                             'Pagado!',
                             'Esta Factura ha sido pagada!',
                             'success'

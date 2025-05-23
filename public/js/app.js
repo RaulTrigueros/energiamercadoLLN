@@ -3088,6 +3088,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -3401,7 +3403,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//import axios from 'axios'
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3479,7 +3481,7 @@ __webpack_require__.r(__webpack_exports__);
     listarEnergia: function listarEnergia(page, buscar, criterio) {
       var me = this;
       var url = '/energia?page=' + page + '&buscar=' + buscar + '&criterio=' + criterio;
-      axios.get(url).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
         var respuesta = response.data;
         me.arrayEnergia = respuesta.energias.data;
         me.pagination = respuesta.pagination;
@@ -3553,25 +3555,13 @@ __webpack_require__.r(__webpack_exports__);
     selectPuesto: function selectPuesto() {
       var me = this;
       var url = '/puesto/selectPuesto';
-      axios.get(url).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
         var respuesta = response.data;
         me.arrayPuesto = respuesta.puestos;
       })["catch"](function (error) {
         console.log(error);
       });
     },
-
-    /* selectPersona(){
-         let me = this;
-         var url = '/persona/selectPersona';
-         axios.get(url).then(function (response) {
-            var respuesta = response.data;
-            me.arrayPersona = respuesta.personas;
-         })
-         .catch(function (error) {
-             console.log(error);
-         })
-     },*/
     cambiarPagina: function cambiarPagina(page, buscar, criterio) {
       var me = this;
       me.pagination.current_page = page;
@@ -3583,7 +3573,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       var me = this;
-      axios.post('/energia/registrar', {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/energia/registrar', {
         'idpuesto': this.idpuesto,
         'nombre_persona': this.nombre_persona,
         'numpuesto': this.numpuesto,
@@ -3612,7 +3602,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       var me = this;
-      axios.put('/energia/actualizar', {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/energia/actualizar', {
         'idpuesto': this.idpuesto,
         'nombre_persona': this.nombre_persona,
         'numpuesto': this.numpuesto,
@@ -3639,7 +3629,7 @@ __webpack_require__.r(__webpack_exports__);
     desactivarEnergia: function desactivarEnergia(id) {
       var _this = this;
 
-      Swal.fire({
+      swal.fire({
         title: 'Marcar factura como pagada?',
         type: 'warning',
         showCancelButton: true,
@@ -3654,11 +3644,11 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         if (result.value) {
           var me = _this;
-          axios.put('/energia/desactivar', {
+          axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/energia/desactivar', {
             'id': id
           }).then(function (response) {
             me.listarEnergia(1, '', 'nombre_persona');
-            Swal.fire('Pagado!', 'Esta Factura ha sido pagada!', 'success');
+            swal.fire('Pagado!', 'Esta Factura ha sido pagada!', 'success');
           })["catch"](function (error) {
             console.log(error);
           });
@@ -3684,7 +3674,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         if (result.value) {
           var me = _this2;
-          axios.put('/energia/activar', {
+          axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/energia/activar', {
             'id': id
           }).then(function (response) {
             me.listarEnergia(1, '', 'nombre_persona');
@@ -59564,29 +59554,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_form_wizard__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_form_wizard__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vue_form_wizard_dist_vue_form_wizard_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-form-wizard/dist/vue-form-wizard.min.css */ "./node_modules/vue-form-wizard/dist/vue-form-wizard.min.css");
 /* harmony import */ var vue_form_wizard_dist_vue_form_wizard_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_form_wizard_dist_vue_form_wizard_min_css__WEBPACK_IMPORTED_MODULE_2__);
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
 
-__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js"); // Cargar Axios y configurarlo
+
+
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // Asegurar que se envía el encabezado CSRF
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+var token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token no encontrado. Asegúrate de tener <meta name="csrf-token" content="{{ csrf_token() }}"> en tu layout.');
+}
+/* Termina la carga de axios */
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
 Vue.use(vue_form_wizard__WEBPACK_IMPORTED_MODULE_1___default.a);
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
 Vue.component('combustible', __webpack_require__(/*! ./components/Combustible.vue */ "./resources/assets/js/components/Combustible.vue")["default"]);
 Vue.component('energia', __webpack_require__(/*! ./components/Energia.vue */ "./resources/assets/js/components/Energia.vue")["default"]);
 Vue.component('cliente', __webpack_require__(/*! ./components/Cliente.vue */ "./resources/assets/js/components/Cliente.vue")["default"]);
@@ -59601,67 +59590,6 @@ Vue.filter('fecha', _filtros_date__WEBPACK_IMPORTED_MODULE_0__["default"]);
 Vue.component('dropdown', __webpack_require__(/*! ./components/dropdown.vue */ "./resources/assets/js/components/dropdown.vue")["default"]); //**** Componentes vue para menu 26 ****
 
 Vue.component('menu26', __webpack_require__(/*! ./components/menu26.vue */ "./resources/assets/js/components/menu26.vue")["default"]); //***************************************
-//***************************************
-
-/*
- Vue.component('taller', require('./components/Taller.vue').default);
- Vue.component('competencia', require('./components/Competencia.vue').default);
-
-
- Vue.component('transparenciaPortal', require('./components/TransparenciaPortal.vue').default);
- Vue.component('transparenciaDashboard', require('./components/TransparenciaDashboard.vue').default);
-
- Vue.component('noticia', require('./components/Noticia.vue').default);
- Vue.component('noticiaportal', require('./components/NoticiaPortal.vue').default);
-
- Vue.component('anuncio', require('./components/Anuncio.vue').default);
- Vue.component('anuncioportal', require('./components/AnuncioPortal.vue').default);
-
-
- Vue.component('Solicitudpartidaregistro', require('./components/Solicitudpartidaregistro.vue').default);
- Vue.component('Solicituddocumentoregistro', require('./components/Solicituddocumentoregistro.vue').default);
-
- Vue.component('Solicituddocumento', require('./components/Solicituddocumento.vue').default);
- Vue.component('Solicitudpartida', require('./components/Solicitudpartida.vue').default);
- Vue.component('servicios', require('./components/Servicios.vue').default);
-
- //***** Componentes vue para gestión de PARTIDAS *****
- Vue.component('nacimiento', require('./components/nacimiento.vue').default);
- Vue.component('defuncion', require('./components/Defuncion.vue').default);
- Vue.component('matrimonio', require('./components/Matrimonio.vue').default);
-
- //***** Componentes vue para gestión de proyectos *****
- Vue.component('proyecto', require('./components/Proyecto.vue').default);
- Vue.component('encargado', require('./components/Encargado.vue').default);
- Vue.component('actividad', require('./components/Actividad.vue').default);
- //*******************************************
-
- Vue.component('matrimonio', require('./components/Matrimonio.vue').default);
-
-//**** Componentes vue para manuales ****
-Vue.component('manualesDash', require('./components/ManualesDash.vue').default);
-Vue.component('manualesPortal', require('./components/ManualesPortal.vue').default);
-//***************************************
-
-
- //**** Componentes vue para carrusel ****
- Vue.component('carruselDash', require('./components/CarruselDashboard.vue').default);
- Vue.component('carruselPortal', require('./components/CarruselPortal.vue').default);
- //***************************************
-
-
- //**** Componentes Contactos 
- Vue.component('contactosportal', require('./components/ContactosPortal.vue').default);
- Vue.component('contactos', require('./components/Contactos.vue').default);
-
- //**** Componentes Preguntas Frecuentes 
- Vue.component('preguntasportal', require('./components/PreguntasPortal.vue').default);
- Vue.component('preguntas', require('./components/Preguntas.vue').default);
- 
- //**** Componentes de Organigramas 
- Vue.component('organigrama', require('./components/Organigrama.vue').default);
- Vue.component('organigramaportal', require('./components/OrganigramaPortal.vue').default);
-*/
 
 var app = new Vue({
   el: '#app',

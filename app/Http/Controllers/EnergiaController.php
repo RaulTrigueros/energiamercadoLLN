@@ -21,26 +21,11 @@ class EnergiaController extends Controller
 
     public function index(Request $request)
     {
-        // if (!$request->ajax()) return redirect('/');
+        if (!$request->ajax()) return redirect('/');
 
         $buscar = $request->buscar;
         $criterio = $request->criterio;
 
-        /*  if ($buscar==''){
-            $energias = Energia::join('personas','energias.idpersona','=','personas.id')
-            ->select('energias.id','energias.idpersona','personas.nombre as nombre_persona',
-                     'energias.numpuesto','energias.numcontador','energias.area','energias.lecturaanterior','energias.lecturaactual',
-                     'energias.costokwh','energias.fechavencimiento','energias.fechainicio','energias.fechafin','energias.mesfacturado','energias.fechaemision','energias.consumo','energias.totalpago','energias.estado')
-            ->orderBy('energias.id','desc')->paginate(5);
-        }else{
-            $energias = Energia::join('personas','energias.idpersona','=','personas.id')
-            ->select('energias.id','energias.idpersona','personas.nombre as nombre_persona',
-                     'energias.numpuesto','energias.numcontador','energias.area','energias.lecturaanterior','energias.lecturaactual',
-                     'energias.costokwh','energias.fechavencimiento','energias.fechainicio','energias.fechafin','energias.mesfacturado','energias.fechaemision','energias.consumo','energias.totalpago','energias.estado')
-           // ->where('personas.'.$criterio,'like','%'. $buscar .'%')
-            ->Where('energias.'.$criterio,'like','%'. $buscar .'%')
-            ->orderBy('energias.id','desc')->paginate(5);
-        }*/
 
         if ($buscar == '') {
             $energias = Energia::join('puestos', 'energias.idpuesto', '=', 'puestos.id')
@@ -107,7 +92,7 @@ class EnergiaController extends Controller
 
     public function store(Request $request)
     {
-        //if(!$request->ajax()) return redirect('/');
+        if (!$request->ajax()) return redirect('/');
         //$image_data = $request->imagen;
         //$encoded_image = base64_encode($image_data);
 
@@ -136,13 +121,10 @@ class EnergiaController extends Controller
 
     public function update(Request $request)
     {
-        //if(!$request->ajax()) return redirect('/');
+        if (!$request->ajax()) return redirect('/');
+
         $energias = Energia::findOrFail($request->id);
         $energias->idpuesto = $request->idpuesto;
-        /*  $energias->idpersona=$request->idpersona;
-        $energias->numpuesto=$request->numpuesto;
-        $energias->numcontador=$request->numcontador;
-        $energias->area=$request->area;*/
         $energias->lecturaanterior = $request->lecturaanterior;
         $energias->lecturaactual = $request->lecturaactual;
         $energias->costokwh = $request->costokwh;
@@ -355,27 +337,4 @@ class EnergiaController extends Controller
         $pdf = \PDF::loadView('pdf.facturapdf', ['energias' => $energias]);
         return $pdf->stream('FacturaEnergia.pdf');
     }
-
-    /* public function facturaPDF(Request $request,$id){
-        $energias = Energia::join('personas','energias.idpersona','=','personas.id')
-        ->select('energias.id','energias.idpersona','personas.nombre as nombre_persona',
-         'energias.numpuesto','energias.numcontador','energias.area','energias.lecturaanterior','energias.lecturaactual',
-         'energias.costokwh','energias.fechavencimiento','energias.fechainicio','energias.fechafin','energias.mesfacturado','energias.fechaemision','energias.consumo','energias.totalpago','energias.estado')
-         ->Where('energias.id', $id)->get();
-        // ->orderBy('energias.fechavencimiento','desc')->get();
-
-         $pdf= \PDF::loadView('pdf.facturapdf',['energias'=>$energias]);
-         return $pdf->stream('FacturaEnergia.pdf');
-
-    }*/
-
-    /*  public function destroy(Request $request)
-    {
-        $energia = Energia::findOrFail($request->id);
-        $energia->delete();
-
-        $this->bitacoraService->store('Eliminación de registro', 'Energia');
-        return "Éxito";
-        
-    }*/
 }
